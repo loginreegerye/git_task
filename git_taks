@@ -1,0 +1,18 @@
+
+1. Работа с историей изменений
+
+1.1 git log --pretty=format:"%s : %an" --since=3.hours master..develop develop..develop-feature1
+1.2 git log --pretty=format:"%s : %an - %cd" --grep="index"
+
+2. "Избирательное слияние"
+
+git log - узнать хэштег коммита
+git merge develop-feature1 HEAD 2ec38f3 - запушить с конкретного коммита
+
+3. Исправление ошибок
+
+git rebase - i  HEAD~n - n-количество коммитов, отсчет с конца
+в редакторе перед конкретным коммитом операция edit
+git commit -amend -m 'new commit' - изменение коммита
+git rebase --continue - следующее действие
+git push -f origin master - пуш на сервер
